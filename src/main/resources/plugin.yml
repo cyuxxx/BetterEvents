@@ -1,0 +1,47 @@
+name: BetterEvents
+version: 1.1
+main: com.cyux.betterevents.BetterEvents
+api-version: 1.20
+authors: [cyux]
+description: Optimized and failproof event management plugin.
+depend: [ProtocolLib]
+
+commands:
+  events:
+    description: Opens the main events GUI.
+    permission: betterevents.user.join
+    usage: /<command>
+  event:
+    description: Main command for managing events.
+    permission: betterevents.user.join
+    usage: /<command> <subcommand>
+    permission-message: §cYou do not have permission to use this command.
+
+permissions:
+  betterevents.admin:
+    description: Allows access to all event admin commands.
+    default: op
+    children:
+      betterevents.admin.create: true
+      betterevents.admin.delete: true
+      betterevents.admin.edit: true
+      betterevents.admin.kick: true
+      betterevents.admin.kits: true
+  betterevents.admin.create:
+    description: Allows creating events and presets.
+    default: op
+  betterevents.admin.delete:
+    description: Allows deleting events.
+    default: op
+  betterevents.admin.edit:
+    description: Allows editing events.
+    default: op
+  betterevents.admin.kick:
+    description: Allows kicking players from events.
+    default: op
+  betterevents.admin.kits:
+    description: Allows managing event kits.
+    default: op
+  betterevents.user.join:
+    description: Allows joining events.
+    default: true
